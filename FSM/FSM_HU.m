@@ -36,6 +36,7 @@ Ki = wc/(alpha^2)
 Kd = alpha/wc
 Tf = 1/(alpha*wc)
 
+syms s
 C_pid = Kp*(1 + Ki/s + Kd*s/(1+s*Tf));
 
 C_pid = sym2tf(C_pid);
@@ -45,3 +46,5 @@ open_loop = Gxx*C_pid;
 bode(Gxx, C_pid, open_loop)
 grid on;
 legend('G_xx', 'C_P', 'G_xx*C_P');
+figure
+margin(open_loop)
