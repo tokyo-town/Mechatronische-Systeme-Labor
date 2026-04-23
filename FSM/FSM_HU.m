@@ -24,7 +24,7 @@ w = squeeze(w);
 mag = squeeze(mag);
 
 
-alpha = 3;
+alpha = 4;
 wc = 12;
 
 [~, idx] = min(abs(w - wc));
