@@ -21,7 +21,7 @@ Gxx = tf(ki, [j, c, kt+kf], 'InputDelay', delay)
 [mag, phase, w] = bode(Gxx);
 phase = squeeze(phase);
 w = squeeze(w);
-mag = squeeze(mag);
+mag = squeeze(mag)
 
 
 alpha = 4;
