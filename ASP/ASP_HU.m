@@ -1,0 +1,65 @@
+b1l = 1.88;
+b2l = 4.69;
+b3l = 7.85;
+b4l = 10.995;
+
+% Define symbolic variable and function
+syms x
+
+brl = b4l;
+A = 1;
+
+s = sin(brl*x);
+sh = sinh(brl*x);
+c = cos(brl*x);
+ch = cosh(brl*x);
+
+Yr = A*(s-sh - (s+sh)/(c+ch)*(c-ch));
+
+
+
+% Convert to MATLAB function handle for plotting
+f = matlabFunction(Yr);
+
+% Define interval
+a = 0;
+b = 1;
+
+sol = 0
+
+if brl == b2l
+    sol = [vpasolve(Yr == 0, x), vpasolve(Yr == 0, x, 0.8)]
+elseif brl == b3l
+    sol = [vpasolve(Yr == 0, x), vpasolve(Yr == 0, x, 0.5), vpasolve(Yr == 0, x, 0.9)]
+elseif brl == b4l
+    sol = [vpasolve(Yr == 0, x), vpasolve(Yr == 0, x, 0.35), vpasolve(Yr == 0, x, 0.65), vpasolve(Yr == 0, x, 0.95)]
+end
+
+% Convert symbolic solutions to numeric
+sol_num = double(sol);
+
+% Keep only real solutions within [a, b]
+zeros_in_interval = sol_num(imag(sol_num) == 0 & sol_num >= a & sol_num <= b);
+
+% Create dense grid for plotting
+x_vals = linspace(a, b, 1000);
+y_vals = f(x_vals);
+
+% Plot function
+figure;
+plot(x_vals, y_vals, 'b', 'LineWidth', 2);
+hold on;
+grid on;
+
+% Plot zero crossings
+plot(sol_num, 0, ...
+     'ro', 'MarkerSize', 8, 'MarkerFaceColor', 'r');
+
+% Labels and title
+xlabel('x');
+ylabel('f(x)');
+title('Function Plot with Zero Crossings');
+
+legend('f(x)', 'Zero crossings');
+
+hold off;

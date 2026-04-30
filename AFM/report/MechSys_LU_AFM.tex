@@ -1,0 +1,215 @@
+\documentclass[a4paper,twoside,12pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
+
+\input{format}  			% File mit den benötigten Packeten, den Formatanweisungen und den Befehlsdefinitionen
+
+\usepackage{nicefrac}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Set compatibility
+
+\usepgfplotslibrary{external}
+% \tikzexternalize[prefix=pictures/tikz/, shell escape=-enable-write18,optimize command away=\includepdf]
+
+\usepackage{pgfplotstable}
+
+\usepackage[
+  output-decimal-marker={.},
+  exponent-product=\cdot,
+]{siunitx}
+% \DeclareSIUnit \vpp {\ensuremath{\mathrm{V_{pp}}}}
+
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\DeclareSIUnit{\rad}{rad}
+
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\large
+\includepdf[fitpaper=true,
+			picturecommand*={\unitlength1cm 
+            % place title centered on A4 page (width 21cm -> center x=10.5cm, height 29.7cm -> center y=14.85cm)
+            \put(10.5,16.85){\makebox(0,0){\Huge\bfseries Lab Report}}
+            \put(10.5,14.85){\makebox(0,0){\Huge\bfseries Principles of Atomic Force Microscopy}}
+            \put(10.5, 13.5){\makebox(0,0){\large 369.002 Mechatronic Systems Laboratory, SS 2026}} % subtitle below line
+            \put(7.3,9.3){Severin Großauer} \put(14.1,9.3){}
+            \put(7.3,8.5){Markus Rennthaler} \put(14.1,8.5){}
+            \put(7.3,7.7){Heinrich Fuhrmann} \put(14.1,7.7){11940304}
+						\put(7.3,6.7){\today} 
+}]
+{images/titlesheet}     %file name of title page
+
+
+\chapter{Abstract}
+
+In this lab exercise, a scaled-up model of an atomic force microscope (AFM) is analyzed using two predominant operation modes: contact mode and tapping mode.
+The strain gauge sensor and lorentz actuator are first calibrated and characterized, then force curves are recorded to display the basic working principle of the AFM.
+Finally, an integral controller is used to control the tip-sample distance to record the sample topography and analyze the frequency response of the system in both operation modes.
+
+\chapter{Setup}
+
+\bilder{htb}{1}{images/setup}{}{1}{images/setup_schematics}{}{Setup of AFM experiments and schematics}{fig:afm_setup}
+
+In fig.~\ref{fig:afm_setup}, the setup of the AFM experiments is shown. Depending on the experiment, different parts of the setup are used.
+The sample is placed on a stage that can be manually moved vertically to align with the AFM tip and horizontally to scan the sample surface.
+Therefore, we can only make linear measurements (not 2D) of the topography.
+The AFM consists of a cantilever with a plastic tip (round or sharp) that can be vertically actuated by a Lorentz actuator.
+To measure the deflection of the cantilever, four strain gauges are attached to the cantilever, which are connected in a Wheatstone bridge configuration.
+Some initial offset can be compensated with a potentiometer.
+The deflection signal can then be optionally filtered with a low-pass filter (not shown in the image) before it is fed into an integral controller, which
+compares it to a given set-point and feeds back to the Lorentz actuator.
+
+In the subsequent experiments, only the parts of the setup that are labeled in the corresponding exercise are used.
+
+\chapter{Experiments}
+\section{Calibration and Characterization of Sensor and Actuator}
+
+
+\subsection*{1.}
+
+\bilder{h}{1}{images/1_offset_compensation}{}{1}{images/1_offset_compensation_schematics}{}{Offset compensation setup and schematics}{fig:afm_setup}
+
+Only the power supply and sensor readout is connected (see fig.~\ref{fig:afm_setup}). By turning the small potentiometer on the readout electronics board, the offset is adjusted until the sensor output reads zero
+when the cantilever is in its rest position.
+
+\subsection*{2.}
+
+\bilder{h}{1}{images/2_lorentz_characterization}{}{1}{images/2_lorentz_characterization_schematics}{}{Lorentz actuator characterization setup and schematics}{fig:lorentz_setup}
+
+To characterize the Lorentz actuator we use the sample stage as a measurement reference and set it to an arbitrary height below the minimum AFM tip height (see fig.~\ref{fig:lorentz_setup} for schematics).
+We apply a voltage in $\qty{100}{\mV}$ steps to the actuator and measure the distance from the cantilever to the sample with a caliper (see fig.~\ref{fig:lorentz_characterization}a).
+By plotting the measured distance over the applied voltage (see fig.~\ref{fig:lorentz_characterization}b), we can clearly see a linear relationship where the height increases by about $\qty{0.27}{\mm\per\mV}$.
+
+This linear relationship is beacause of
+$$\begin{aligned}
+F_\mathrm{L} &= N I B l &\propto I \qquad \text{Lorentz Force}\\
+F_\mathrm{L} &= k \Delta z &\propto \Delta z \qquad \text{Hooke's Law}\\
+\end{aligned}$$
+
+\bilder{h}{1}{images/IMG_6045}{}{1}{images/2_lorentz_characterization_chart}{}{Lorentz actuator characterization measurement}{fig:lorentz_characterization}
+
+\subsection*{3.}
+
+\bilder{h}{1}{images/2_lorentz_characterization}{}{1}{images/3_plant_sweep}{}{Plant characterization setup and schematics}{fig:plant_sweep}
+
+Next, a sine sweep from $\qty{10}{\Hz}$ to $\qty{100}{\Hz}$ is applied to the Lorentz actuator and the frequency response of the free cantilever is measured with an oscilloscope (see fig.~\ref{fig:plant_sweep}).
+The resulting Bode plot is shown in fig.~\ref{fig:plant_sweep_bode}.
+We start at $-180^{\circ}$ phase lag due to the inertia of the cantilever. The plot shows two dominant resonances at $\qty{18.9}{\Hz}$ and $\qty{22.1}{\Hz}$, adding $-360^{\circ}$ of phase lag in total, as well as some structural modes at higher frequencies.
+
+
+\bild{h}{0.5}{images/3_cantilever_resonance}{Bode plot of AFM cantilever}{fig:plant_sweep_bode}
+
+\section{Force Curve}
+
+\subsection*{4.}
+
+\bilder{h}{1}{images/4_force_curve_setup}{}{1}{images/4_force_curve_schematics}{}{Force curve measurement setup and schematics}{fig:force_curve_setup}
+
+Next, the force curve is measured by applying a slow triangular wave to the Lorentz actuator and measuring the cantilever deflection with the oscilloscope (see fig.~\ref{fig:force_curve_setup}).
+The force curve can be used to determine properties of the sample surface. In this case, the qualitative difference between a sticky and non-sticky surface.
+The results are shown in fig.~\ref{fig:force_curve}. The force curve of the sticky surface shows oscillations caused by the adhesion forces after releasing the tip from the surface.
+
+Fig.~\ref{fig:force_curve_AFM} shows the force curve of a real AFM. At atomic level, adhesive and repulsive forces are always present and visible in the force curve.
+The pull-off effect shown in the blue curve due to the adhesive forces is similar to the one observed in the experiment with the sticky surface.
+However, this effect becomes much too small to be observed with the non-sticky surface.
+
+\bilder{h}{1}{images/4_sticky}{Sticky surface}{1}{images/4_non-sticky}{Non-sticky surface}{Force curve with sticky and non-sticky surfaces}{fig:force_curve}
+\bild{h}{0.5}{images/AFM_force_curve}{Schematic force curve of a real AFM}{fig:force_curve_AFM}
+
+\section{Contact Mode Operation}
+
+\subsection*{5.}
+
+This section requires no measurements.
+
+\subsection*{6.}
+
+\bilder{h}{1}{images/6_controller}{}{1}{images/6_controller_schematics}{}{Controller implementation setup and schematics}{fig:controller}
+
+The integrator itself has a gain of $K_\mathrm{I} = \frac{1}{RC} = \qty{45.5}{\per\s} = \qty{7.2}{\Hz}$ using the nominal values $R=\qty{220}{\kilo\ohm}$ and $C=\qty{100}{\nano\F}$.
+If the rest of the system is very fast, this would be the bandwidth of the closed-loop system. However, the bandwidth of the whole system is limited by the mechanical resonances of the cantilever,
+therefore we must expect a realistic bandwidth of about 1 order of magnitude lower than the integrator bandwidth, i.e. around $\qty{0.7}{\Hz}$.
+
+The setpoint is set to a constant value in order to set the controller output to zero when the cantilever is touching the sample surface at the neutral position.
+
+\subsection*{7.}
+
+Using the same setup as before, the sample is moved horizontally along the three height patterns. First, two regular patterns with a predefined step height are measured by
+shifting the sample and waiting about 1-2s for the system to settle at each step.
+The results are shown in tab.~\ref{tab:step_heights_regular} and visualized in fig.~\ref{fig:step_heights_regular}. The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_regular_osci} for reference.
+
+\tabelle{h}{Measured step heights of the known patterns. Voltages are normalized to start at 0.}{tab:step_heights_regular}{l l l l l}{
+  \toprule
+  Step height & 100 µm & & 250 µm & \\
+  \midrule
+  Step Nr. & voltage (mV) & height (µm) & voltage (mV) & height (µm) \\
+  \midrule
+  0 & 0 & 0 & 0 & 0 \\
+  1 & 20 & 100 & 65 & 250 \\
+  2 & 35 & 200 & 150 & 500 \\
+  3 & 40 & 300 & 220 & 750 \\
+  4 & 55 & 400 & 295 & 1000 \\
+  5 & 78 & 500 & 370 & 1250 \\
+  \bottomrule
+}
+
+\bild{h}{0.5}{images/7_known_steps}{Measured step heights of the known patterns}{fig:step_heights_regular}
+
+As we can see, the step heights correspond roughly linearly to the readout voltages. However, the relation is distorted for small changes in step height due to the nonlinearity of the
+deformation of the tip-cantilever system. However, we can attempt to find a reasonable average by using all steps of the 250 µm pattern, and just the first and last step of the 100 µm pattern,
+which results in a sensitivity of ($\qty{25.2}{\milli\V\per100\micro\m}$).
+
+Applying this sensitivity to the readouts from the unknown pattern, we can estimate its step heights as shown in tab.~\ref{tab:step_heights_unknown} and fig.~\ref{fig:step_heights_unknown}.
+The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_osci} for reference.
+
+If we assume that the step heights of the unknown pattern lie at "nice" integer values, we can see that we are very close (0.8 \% error) to the expected values with an expected sensitivity of $\qty{25.0}{\milli\V\per100\micro\m}$.
+
+
+\tabelle{h}{Calculated step heights of the unknown patterns. Voltages are normalized to start at 0.}{tab:step_heights_unknown}{l l l l}{
+  \toprule
+  Step Nr. & voltage (mV) & height (µm) & assumed real height (µm) \\
+  \midrule
+  0 & 0 & 0 & 0 \\
+  1 & 125 & 496.0 & 500 \\
+  2 & 0 & 0 & 0 \\
+  3 & 25 & 99.2 & 100 \\
+  4 & 175 & 694.4 & 700 \\
+  5 & 25 & 99.2 & 100 \\
+  \bottomrule
+}
+
+\bild{h}{0.5}{images/7_unknown_steps}{Measured and calculated step heights of all patterns}{fig:step_heights_unknown}
+
+\bilder{h}{1}{images/7_100um}{100 µm}{1}{images/7_250um}{250 µm}{Oscilloscope readouts for known step patterns}{fig:step_heights_regular_osci}
+\bild{h}{1}{images/7_xxxum}{Oscilloscope readouts for unknown step patterns}{fig:step_heights_unknown_osci}
+
+\subsection*{8.}
+\subsection*{9.}
+
+\section{Tapping Mode Operation}
+
+\subsection*{10.}
+\subsection*{11.}
+\subsection*{12.}
+\subsection*{13.}
+\subsection*{14.}
+
+
+
+
+
+
+
+% \tabelle{htb}{Parameters of PID-controller (preliminary)}{tab:parameters_preliminary}{l l}{
+%   \toprule
+%   \midrule
+%   \bottomrule
+% }
+
+
+
+
+\end{document}
