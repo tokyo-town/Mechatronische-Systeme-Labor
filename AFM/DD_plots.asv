@@ -1,0 +1,26 @@
+U_0 = 10;
+R = 1;
+A = 1;
+K = 1;
+phi_c = 0;
+phi_0 = 0;
+
+w = 20.4;
+
+syms t
+U_sens = U_0 * cos(w * t + phi_0);
+U_act = A * K * cos(w * t + phi_c) / R;
+
+U_out = U_sens * U_act;
+U_lp = mean(U_out);
+
+figure();
+hold on;
+
+rng = [0 0.5]
+fplot(U_sens, [0 0.5]);
+fplot(U_act, [0 0.5]);
+fplot(U_out, [0 0.5]);
+fplot(U_lp, [0 0.5]);
+
+legend(["U_{sens}" "U_{act}" "U_{out}"]);
