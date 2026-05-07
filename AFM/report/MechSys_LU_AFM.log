@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.17)  28 APR 2026 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.17)  3 MAY 2026 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -728,6 +728,9 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Label `fig:afm_setup' multiply defined.
 
+
+LaTeX Warning: Label `tab:step_heights_fast' multiply defined.
+
 )
 \openout1 = `MechSys_LU_AFM.aux'.
 
@@ -992,100 +995,201 @@ Package pdftex.def Info: images/AFM_force_curve.png  used on input line 120.
 <images/6_controller.png, id=99, 722.7pt x 542.025pt>
 File: images/6_controller.png Graphic file (type png)
 <use images/6_controller.png>
-Package pdftex.def Info: images/6_controller.png  used on input line 130.
+Package pdftex.def Info: images/6_controller.png  used on input line 132.
 (pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
 <images/6_controller_schematics.png, id=100, 726.861pt x 444.789pt>
 File: images/6_controller_schematics.png Graphic file (type png)
 <use images/6_controller_schematics.png>
-Package pdftex.def Info: images/6_controller_schematics.png  used on input line 130.
+Package pdftex.def Info: images/6_controller_schematics.png  used on input line 132.
 (pdftex.def)             Requested size: 210.87926pt x 129.0398pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./images/4_sticky.png> <./images/4_non-sticky.png> <./images/AFM_force_curve.png>]
+ [11 <./images/4_sticky.png> <./images/4_non-sticky.png> <./images/AFM_force_curve.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 157.
+(Font)              <12> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 157.
+(Font)              <8> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 157.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 157.
+(Font)              <6> on input line 159.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 159.
  (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/7_known_steps.png, id=108, 389.382pt x 241.557pt>
+) [12 <./images/6_controller.png> <./images/6_controller_schematics.png>]
+<images/7_known_steps.png, id=113, 389.601pt x 241.557pt>
 File: images/7_known_steps.png Graphic file (type png)
 <use images/7_known_steps.png>
-Package pdftex.def Info: images/7_known_steps.png  used on input line 159.
-(pdftex.def)             Requested size: 224.33907pt x 139.17062pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12 <./images/6_controller.png> <./images/6_controller_schematics.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/7_unknown_steps.png, id=114, 389.601pt x 241.557pt>
+Package pdftex.def Info: images/7_known_steps.png  used on input line 161.
+(pdftex.def)             Requested size: 210.87926pt x 130.74844pt.
+<images/8_known_steps.png, id=114, 389.382pt x 241.338pt>
+File: images/8_known_steps.png Graphic file (type png)
+<use images/8_known_steps.png>
+Package pdftex.def Info: images/8_known_steps.png  used on input line 161.
+(pdftex.def)             Requested size: 210.87926pt x 130.70355pt.
+<images/7_unknown_steps.png, id=115, 389.601pt x 241.557pt>
 File: images/7_unknown_steps.png Graphic file (type png)
 <use images/7_unknown_steps.png>
-Package pdftex.def Info: images/7_unknown_steps.png  used on input line 184.
-(pdftex.def)             Requested size: 224.33907pt x 139.09323pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/7_100um.png, id=115, 803.0pt x 504.88625pt>
+Package pdftex.def Info: images/7_unknown_steps.png  used on input line 170.
+(pdftex.def)             Requested size: 210.87926pt x 130.74844pt.
+<images/8_unknown_steps.png, id=116, 389.601pt x 241.557pt>
+File: images/8_unknown_steps.png Graphic file (type png)
+<use images/8_unknown_steps.png>
+Package pdftex.def Info: images/8_unknown_steps.png  used on input line 170.
+(pdftex.def)             Requested size: 210.87926pt x 130.74844pt.
+ [13{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./images/7_known_steps.png> <./images/8_known_steps.png>]
+<images/7_100um.png, id=124, 803.0pt x 504.88625pt>
 File: images/7_100um.png Graphic file (type png)
 <use images/7_100um.png>
-Package pdftex.def Info: images/7_100um.png  used on input line 186.
+Package pdftex.def Info: images/7_100um.png  used on input line 172.
 (pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
-<images/7_250um.png, id=116, 803.0pt x 504.88625pt>
+<images/7_250um.png, id=125, 803.0pt x 504.88625pt>
 File: images/7_250um.png Graphic file (type png)
 <use images/7_250um.png>
-Package pdftex.def Info: images/7_250um.png  used on input line 186.
+Package pdftex.def Info: images/7_250um.png  used on input line 172.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+<images/7_xxxum.png, id=126, 803.0pt x 504.88625pt>
+File: images/7_xxxum.png Graphic file (type png)
+<use images/7_xxxum.png>
+Package pdftex.def Info: images/7_xxxum.png  used on input line 173.
+(pdftex.def)             Requested size: 269.20961pt x 169.27083pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./images/7_unknown_steps.png> <./images/8_unknown_steps.png> <./images/7_100um.png (PNG copy)> <./images/7_250um.png (PNG copy)>]
+<images/8_profile_height.png, id=133, 415.443pt x 382.812pt>
+File: images/8_profile_height.png Graphic file (type png)
+<use images/8_profile_height.png>
+Package pdftex.def Info: images/8_profile_height.png  used on input line 204.
+(pdftex.def)             Requested size: 269.20961pt x 248.06549pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/8_100um.png, id=134, 803.0pt x 504.88625pt>
+File: images/8_100um.png Graphic file (type png)
+<use images/8_100um.png>
+Package pdftex.def Info: images/8_100um.png  used on input line 207.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+<images/8_250um.png, id=135, 803.0pt x 504.88625pt>
+File: images/8_250um.png Graphic file (type png)
+<use images/8_250um.png>
+Package pdftex.def Info: images/8_250um.png  used on input line 207.
 (pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/7_xxxum.png, id=117, 803.0pt x 504.88625pt>
-File: images/7_xxxum.png Graphic file (type png)
-<use images/7_xxxum.png>
-Package pdftex.def Info: images/7_xxxum.png  used on input line 187.
+<images/8_xxxum.png, id=136, 803.0pt x 504.88625pt>
+File: images/8_xxxum.png Graphic file (type png)
+<use images/8_xxxum.png>
+Package pdftex.def Info: images/8_xxxum.png  used on input line 208.
 (pdftex.def)             Requested size: 448.67813pt x 282.11034pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+File: images/6_controller.png Graphic file (type png)
+<use images/6_controller.png>
+Package pdftex.def Info: images/6_controller.png  used on input line 213.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/9_closed_loop_schematics.png, id=137, 726.861pt x 479.172pt>
+File: images/9_closed_loop_schematics.png Graphic file (type png)
+<use images/9_closed_loop_schematics.png>
+Package pdftex.def Info: images/9_closed_loop_schematics.png  used on input line 213.
+(pdftex.def)             Requested size: 210.87926pt x 139.0148pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (56.33998pt too wide) in paragraph at lines 215--220
+\T1/lmr/m/n/14.4 Next, the fre-quency re-sponse of the closed-loop sys-tem is mea-sured ($\OT1/lmr/m/n/14.4 1 [] [] 100 []$\T1/lmr/m/n/14.4 ).
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./images/7_known_steps.png>]
+ [15 <./images/7_xxxum.png (PNG copy)>]
+<images/9_closed_loop_bode.png, id=141, 841.836pt x 542.025pt>
+File: images/9_closed_loop_bode.png Graphic file (type png)
+<use images/9_closed_loop_bode.png>
+Package pdftex.def Info: images/9_closed_loop_bode.png  used on input line 226.
+(pdftex.def)             Requested size: 269.20961pt x 173.33575pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/9_open_closed_comparison.png, id=142, 826.506pt x 542.025pt>
+File: images/9_open_closed_comparison.png Graphic file (type png)
+<use images/9_open_closed_comparison.png>
+Package pdftex.def Info: images/9_open_closed_comparison.png  used on input line 227.
+(pdftex.def)             Requested size: 269.20961pt x 176.54475pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./images/7_unknown_steps.png>] [15 <./images/7_100um.png (PNG copy)> <./images/7_250um.png (PNG copy)>] [16 <./images/7_xxxum.png (PNG copy)>] (MechSys_LU_AFM.aux)
+ [16 <./images/8_profile_height.png>]
+<images/10_setup.png, id=147, 722.7pt x 542.025pt>
+File: images/10_setup.png Graphic file (type png)
+<use images/10_setup.png>
+Package pdftex.def Info: images/10_setup.png  used on input line 235.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/10_schematics.png, id=148, 726.861pt x 483.333pt>
+File: images/10_schematics.png Graphic file (type png)
+<use images/10_schematics.png>
+Package pdftex.def Info: images/10_schematics.png  used on input line 235.
+(pdftex.def)             Requested size: 210.87926pt x 140.22197pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `tab:tapping_surfaces' on page 17 undefined on input line 240.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/10_non-sticky.png, id=149, 803.0pt x 504.88625pt>
+File: images/10_non-sticky.png Graphic file (type png)
+<use images/10_non-sticky.png>
+Package pdftex.def Info: images/10_non-sticky.png  used on input line 253.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+<images/10_sticky.png, id=150, 803.0pt x 504.88625pt>
+File: images/10_sticky.png Graphic file (type png)
+<use images/10_sticky.png>
+Package pdftex.def Info: images/10_sticky.png  used on input line 253.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./images/8_100um.png (PNG copy)> <./images/8_250um.png (PNG copy)>] [18 <./images/8_xxxum.png (PNG copy)>] [19 <./images/9_closed_loop_schematics.png> <./images/9_closed_loop_bode.png>] [20 <./images/9_open_closed_comparison.png> <./images/10_setup.png> <./images/10_schematics.png>] [21 <./images/10_non-sticky.png (PNG copy)> <./images/10_sticky.png (PNG copy)>] (MechSys_LU_AFM.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36253 strings out of 474485
- 928058 string characters out of 5753548
+ 36406 strings out of 474485
+ 932634 string characters out of 5753548
  1937542 words of memory out of 5000000
- 57938 multiletter control sequences out of 15000+600000
- 634666 words of font info for 98 fonts, out of 8000000 for 9000
+ 58091 multiletter control sequences out of 15000+600000
+ 637664 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,17n,107p,11005b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on MechSys_LU_AFM.pdf (16 pages, 59097703 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
+Output written on MechSys_LU_AFM.pdf (21 pages, 72084597 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

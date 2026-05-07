@@ -561,6 +561,12 @@ INPUT .\images\7_known_steps.png
 INPUT .\images\7_known_steps.png
 INPUT .\images\7_known_steps.png
 INPUT .\images\7_known_steps.png
+INPUT .\images\8_known_steps.png
+INPUT .\images\8_known_steps.png
+INPUT .\images\8_known_steps.png
+INPUT .\images\8_known_steps.png
+INPUT .\images\8_known_steps.png
+INPUT .\images\8_known_steps.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ts1-lmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ts1-lmr10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ts1-lmr7.tfm
@@ -570,6 +576,13 @@ INPUT .\images\7_unknown_steps.png
 INPUT .\images\7_unknown_steps.png
 INPUT .\images\7_unknown_steps.png
 INPUT .\images\7_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT .\images\8_unknown_steps.png
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT .\images\7_100um.png
 INPUT .\images\7_100um.png
 INPUT .\images\7_100um.png
@@ -589,7 +602,76 @@ INPUT .\images\7_xxxum.png
 INPUT .\images\7_xxxum.png
 INPUT .\images\7_xxxum.png
 INPUT .\images\7_xxxum.png
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_profile_height.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_100um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_250um.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\8_xxxum.png
+INPUT .\images\6_controller.png
+INPUT .\images\6_controller.png
+INPUT .\images\6_controller.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_schematics.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_closed_loop_bode.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\9_open_closed_comparison.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_setup.png
+INPUT .\images\10_schematics.png
+INPUT .\images\10_schematics.png
+INPUT .\images\10_schematics.png
+INPUT .\images\10_schematics.png
+INPUT .\images\10_schematics.png
+INPUT .\images\10_schematics.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_non-sticky.png
+INPUT .\images\10_sticky.png
+INPUT .\images\10_sticky.png
+INPUT .\images\10_sticky.png
+INPUT .\images\10_sticky.png
+INPUT .\images\10_sticky.png
+INPUT .\images\10_sticky.png
 INPUT MechSys_LU_AFM.aux
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
@@ -599,6 +681,8 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr12.pfb
@@ -607,3 +691,5 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy8.pfb

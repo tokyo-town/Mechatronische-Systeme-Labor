@@ -120,6 +120,8 @@ However, this effect becomes much too small to be observed with the non-sticky s
 \bild{h}{0.5}{images/AFM_force_curve}{Schematic force curve of a real AFM}{fig:force_curve_AFM}
 
 \section{Contact Mode Operation}
+In contact mode imaging, constant connection between the cantilever tip and the sample is necessary.
+An integrator controller is used to keep the cantilever deflection constant and the height of an unknown sample topography is determined.
 
 \subsection*{5.}
 
@@ -138,60 +140,119 @@ The setpoint is set to a constant value in order to set the controller output to
 \subsection*{7.}
 
 Using the same setup as before, the sample is moved horizontally along the three height patterns. First, two regular patterns with a predefined step height are measured by
-shifting the sample and waiting about 1-2s for the system to settle at each step.
-The results are shown in tab.~\ref{tab:step_heights_regular} and visualized in fig.~\ref{fig:step_heights_regular}. The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_regular_osci} for reference.
+shifting the sample and waiting about $\qtyrange{1}{2}{\s}$ for the system to settle at each step (slow scan).
+The results are shown in tab.~\ref{tab:step_heights_slow} and visualized in fig.~\ref{fig:step_heights_regular}a. The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_regular_osci} for reference.
 
-\tabelle{h}{Measured step heights of the known patterns. Voltages are normalized to start at 0.}{tab:step_heights_regular}{l l l l l}{
+\tabelle{h}{Measured step heights of the known patterns and calculated height of the unknown pattern (slow scan). Voltages are normalized to start at 0.}{tab:step_heights_slow}{l @{\hspace{1cm}} rr @{\hspace{1.5cm}} rr @{\hspace{1.5cm}} rr}{
   \toprule
-  Step height & 100 µm & & 250 µm & \\
+  Pattern & \multicolumn{2}{l}{100 µm} & \multicolumn{2}{l}{250 µm} & \multicolumn{2}{l}{??? µm} \\
   \midrule
-  Step Nr. & voltage (mV) & height (µm) & voltage (mV) & height (µm) \\
+  Step & mV & µm & mV & µm & mV & µm \\
   \midrule
-  0 & 0 & 0 & 0 & 0 \\
-  1 & 20 & 100 & 65 & 250 \\
-  2 & 35 & 200 & 150 & 500 \\
-  3 & 40 & 300 & 220 & 750 \\
-  4 & 55 & 400 & 295 & 1000 \\
-  5 & 78 & 500 & 370 & 1250 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  1 & 22 & 100 & 65 & 250 & 130 & 525 \\
+  2 & 36 & 200 & 135 & 500 & 0 & 0 \\
+  3 & 40 & 300 & 215 & 750 & 20 & 81 \\
+  4 & 54 & 400 & 285 & 1000 & 170 & 687 \\
+  5 & 78 & 500 & 355 & 1250 & 10 & 40 \\
   \bottomrule
 }
 
-\bild{h}{0.5}{images/7_known_steps}{Measured step heights of the known patterns}{fig:step_heights_regular}
+\bilder{h}{1}{images/7_known_steps}{slow scan}{1}{images/8_known_steps}{fast scan}{Measured step heights of the known patterns}{fig:step_heights_regular}
 
 As we can see, the step heights correspond roughly linearly to the readout voltages. However, the relation is distorted for small changes in step height due to the nonlinearity of the
-deformation of the tip-cantilever system. However, we can attempt to find a reasonable average by using all steps of the 250 µm pattern, and just the first and last step of the 100 µm pattern,
-which results in a sensitivity of ($\qty{25.2}{\milli\V\per100\micro\m}$).
+deformation of the tip-cantilever system. However, we can attempt to find a reasonable average by weighing the steps with the step size which results in a sensitivity of ($\qty{24.74}{\milli\V\per100\micro\m}$).
 
-Applying this sensitivity to the readouts from the unknown pattern, we can estimate its step heights as shown in tab.~\ref{tab:step_heights_unknown} and fig.~\ref{fig:step_heights_unknown}.
+Applying this sensitivity to the readouts from the unknown pattern, we can estimate its step heights as shown in tab.~\ref{tab:step_heights_slow} and fig.~\ref{fig:step_heights_unknown}a.
 The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_osci} for reference.
 
-If we assume that the step heights of the unknown pattern lie at "nice" integer values, we can see that we are very close (0.8 \% error) to the expected values with an expected sensitivity of $\qty{25.0}{\milli\V\per100\micro\m}$.
 
+\bilder{h}{1}{images/7_unknown_steps}{slow scan}{1}{images/8_unknown_steps}{fast scan}{Measured step heights of known and unknown patterns}{fig:step_heights_unknown}
 
-\tabelle{h}{Calculated step heights of the unknown patterns. Voltages are normalized to start at 0.}{tab:step_heights_unknown}{l l l l}{
+\bilder{h}{1}{images/7_100um}{100 µm}{1}{images/7_250um}{250 µm}{Oscilloscope readouts for known step patterns}{fig:step_heights_regular_osci}
+\bild{h}{0.6}{images/7_xxxum}{Oscilloscope readouts for unknown step patterns}{fig:step_heights_unknown_osci}
+
+\subsection*{8.}
+
+Next, the scan is done without waiting for the system to settle at each step (fast scan). The scan time now is only about $\qty{0.5}{\s}$ for each step.
+The results are shown in tab.~\ref{tab:step_heights_fast} and visualized in fig.~\ref{fig:step_heights_regular}b.
+The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_regular_osci_fast} for reference.
+
+\tabelle{h}{Measured step heights of the known patterns and calculated heights for unknown pattern (fast scan). Voltages are normalized to start at 0.}{tab:step_heights_fast}{l @{\hspace{1cm}} rr @{\hspace{1.5cm}} rr @{\hspace{1.5cm}} rr}{
   \toprule
-  Step Nr. & voltage (mV) & height (µm) & assumed real height (µm) \\
+  Pattern & \multicolumn{2}{l}{100 µm} & \multicolumn{2}{l}{250 µm} & \multicolumn{2}{l}{??? µm} \\
   \midrule
-  0 & 0 & 0 & 0 \\
-  1 & 125 & 496.0 & 500 \\
-  2 & 0 & 0 & 0 \\
-  3 & 25 & 99.2 & 100 \\
-  4 & 175 & 694.4 & 700 \\
-  5 & 25 & 99.2 & 100 \\
+  Step & mV & µm & mV & µm & mV & µm \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  1 & 25 & 100 & 55 & 250 & 130 & 517 \\
+  2 & 35 & 200 & 135 & 500 & 0 & 0 \\
+  3 & 45 & 300 & 215 & 750 & 25 & 99 \\
+  4 & 60 & 400 & 285 & 1000 & 185 & 736 \\
+  5 & 75 & 500 & 365 & 1250 & 20 & 80 \\
   \bottomrule
 }
 
-\bild{h}{0.5}{images/7_unknown_steps}{Measured and calculated step heights of all patterns}{fig:step_heights_unknown}
+The result looks very similar to the slow scan, but we expect higher readouts because of the reduced settling time of the overshoots. This is reflected in the higher sensitivity (weighted average) of
+$\qty{25.14}{\milli\V\per100\micro\m}$. Applying this sensitivity to the readouts from the unknown pattern, we get the results shown in tab.~\ref{tab:step_heights_fast} and fig.~\ref{fig:step_heights_unknown}b.
+The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_osci_fast} for reference.
 
-\bilder{h}{1}{images/7_100um}{100 µm}{1}{images/7_250um}{250 µm}{Oscilloscope readouts for known step patterns}{fig:step_heights_regular_osci}
-\bild{h}{1}{images/7_xxxum}{Oscilloscope readouts for unknown step patterns}{fig:step_heights_unknown_osci}
+We can now compare both height estimations (fig.~\ref{fig:step_heights_comparison}). As expected, the fast scan shows slightly higher values overall.
+If we assume that the step heights of the unknown pattern lie at round integer values, we can see that we have an error of about $\pm\qty{20}{\micro\m}$ for each measuring point.
 
-\subsection*{8.}
+
+
+\bild{h}{0.6}{images/8_profile_height}{Comparison of estimated step heights for slow and fast scanning methods}{fig:step_heights_comparison}
+
+
+\bilder{h}{1}{images/8_100um}{100 µm}{1}{images/8_250um}{250 µm}{Oscilloscope readouts for known step patterns (scanned faster)}{fig:step_heights_regular_osci_fast}
+\bild{h}{1}{images/8_xxxum}{Oscilloscope readouts for unknown step patterns (scanned faster)}{fig:step_heights_unknown_osci_fast}
+
+
 \subsection*{9.}
 
+\bilder{h}{1}{images/6_controller}{}{1}{images/9_closed_loop_schematics}{}{Closed-loop system identification setup and schematics}{fig:closed_loop_bode_setup}
+
+Next, the frequency response of the closed-loop system is measured ($\qtyrange{1}{100}{\Hz}$).
+By keeping the tip engaged to the sample and adding a small amplitude sine wave to the Lorentz acutation signal we simulate varying rates of sample height changes.
+The setup is shown in fig.~\ref{fig:closed_loop_bode_setup}.
+The resulting Bode plot is shown in fig.~\ref{fig:closed_loop_bode}.
+The system yields the best readout if the sample height changes at around $\qty{20.4}{\Hz}$ (first resonance), then the sensitivity decreases until it hits an anti-resonance at $\qty{72.8}{\Hz}$.
+
+As expected, the shape of the Bode plot is similar to the open-loop case, but the integrator control
+attenuates the gain by about $\qty{20}{\dB}$ and introduces a phase lead of $+90^{\circ}$, stabilizing the system for higher frequencies.
+See fig.~\ref{fig:closed_loop_bode_comparison} for a direct comparison of the open-loop and closed-loop Bode plots.
+
+
+\bild{h}{0.6}{images/9_closed_loop_bode}{Bode plot of closed-loop system}{fig:closed_loop_bode}
+\bild{h}{0.6}{images/9_open_closed_comparison}{Comparison of open-loop and closed-loop Bode plots}{fig:closed_loop_bode_comparison}
+
 \section{Tapping Mode Operation}
+In tapping mode imaging, the cantilever is actuated in vertical oscillation, so the tip only touches the sample at the lowest point of the oscillation.
+With direct demodulation and an integral controller the unknown sample profile is measured.
 
 \subsection*{10.}
+
+\bilder{h}{1}{images/10_setup}{}{1}{images/10_schematics}{}{Open loop tapping mode setup and schematics}{fig:tapping_setup}
+
+The setup for measuring the properties of different surfaces in tapping mode is shown in fig.~\ref{fig:tapping_setup}.
+The actuation frequency is chosen to be the resonance at $\qty{20.4}{\Hz}$.
+
+The differences between the readouts of the sticky and non-sticky surface are shown in fig.~\ref{fig:tapping_surfaces} and tab.~\ref{tab:tapping_surfaces}.
+Due to the noisiness of the sensor readout, exact measurements are not possible, however, the qualitative differences are visually apparent:
+
+The sticky surface dampens the output by $\approx 30 \%$ and introduces a phase lag of $\approx 30^{\circ}$.
+
+\tabelle{h}{Properties of output signal in tapping mode}{tab:step_heights_fast}{l r r}{
+  \toprule
+  Surface & Output $V_{pp}$ & Phase offset \\
+  sticky & 40 & $-27.9^{\circ}$ \\
+  non-sticky & 60 & $6.5^{\circ}$ \\
+  \bottomrule
+}
+
+\bilder{h}{1}{images/10_non-sticky}{Non-sticky}{1}{images/10_sticky}{Sticky}{Sensor readout for different surface properties. Yellow curve: actuation signal, green curve: sensor readout signal}{fig:tapping_surfaces}
+
+
 \subsection*{11.}
 \subsection*{12.}
 \subsection*{13.}
