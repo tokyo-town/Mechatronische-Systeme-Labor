@@ -1,0 +1,124 @@
+%%% A
+
+A = [-91 -307;
+     256 0];
+B = [128; 0];
+C = [180 55];
+D = 0;
+
+
+[num, den] = ss2tf(A, B, C, D);
+[z, p, k] = tf2zp(num, den);
+G = tf(num, den);
+figure();
+pzplot(G)
+
+legend();
+grid();
+
+figure();
+bode(G)
+
+legend();
+grid();
+
+%%% B
+
+Rs = 4500;
+Ts = 1/Rs;
+n = 512;
+
+% [y, tout] = stepz(num, den, n, Rs);
+
+t = (0:n-1)' * Ts;
+u = ones(n, 1);
+[y, tout] = lsim(G, u, t);
+
+% add gaussian noise
+noise = randn(n, 1) * sqrt(2); % Generate Gaussian noise
+y_noise = y + noise; % Add noise to the step response
+
+data = iddata(y_noise, u, Ts);
+
+G_d = tfest(data, 2, 1);
+
+figure();
+hold on
+bode(G, G_d), grid, legend
+
+
+%%% C
+
+figure();
+hold on
+
+for f = [100, 200, 300, 400]
+    [Ki, C_I] = design_I_ctl(G, f);
+    bode(C_I*G)
+end
+
+grid();
+legend(["100", "200", "300", "400"]);
+
+
+%%% D
+
+% PI controller
+[Kp, Ki, C_PI] = design_PI_ctl(G, 400, 70);
+
+figure();
+hold on
+% loop function
+G_loop = C_PI*G;
+bode(G_loop)
+grid();
+legend();
+
+bode(C_PI)
+C_I = design_I_ctl(G, 400);
+
+S_I = 1 / (1 + C_I * G);
+S_PI = 1 / (1 + C_PI * G);
+
+bode(S_I, S_PI);
+
+%%% E
+
+C_PI_d = c2d(C_PI, Ts);
+G_d = c2d(G, Ts);
+
+
+function [Ki, C_I] = design_I_ctl(P, fc)
+    [mag, ~, w] = bode(P);
+    mag = squeeze(mag);
+    w = squeeze(w);
+
+    wc = 2*pi*fc;
+    % find closest index of wout
+    [~, idx] = min(abs(w - wc)); % Find the index of the closest frequency
+    magi = mag(idx); % Get the magnitude at that frequency
+    
+    Ki = wc / magi;
+    C_I = tf(Ki, [1, 0]);
+end
+
+function [Kp, Ki, C_PI] = design_PI_ctl(P, fc, pm)
+    [mag, ~, w] = bode(P);
+    mag = squeeze(mag);
+    w = squeeze(w);
+
+    wc = 2*pi*fc;
+    % find closest index of wout
+    [~, idx] = min(abs(w - wc)); % Find the index of the closest frequency
+    mag_P = mag(idx); % Get the magnitude at that frequency
+    
+    Tn = tan(deg2rad(pm + 90)) / wc;
+    
+    % 4. Kp berechnen, damit |L(jwc)| = 1
+    mag_C_unit_Kp = abs(1 + 1/(1i * wc * Tn));
+    Kp = 1 / (mag_P * mag_C_unit_Kp);
+
+    Ki = wc / mag_P;
+
+    C_PI = tf([Kp, Ki], [1, 0]);
+end

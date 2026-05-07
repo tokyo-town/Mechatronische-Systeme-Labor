@@ -25,6 +25,15 @@ void MirrorInterrupt(void *baseaddr_p)
 	if(mirror->mode == CLOSED_LOOP){
 		// Todo: In closed loop mode, run the PLL controller and set a new period. Don't forget to consider the operation point
 
+		// read the current phase error
+		int32_t dt_phi = MirrorGetPhase();
+		// calculate the control output
+		float u = mirror->Kp * dt_phi + mirror->Ki * mirror->int_state;
+		// update the integrating state
+		mirror->int_state += dt_phi;
+		// set the new period
+		double f = PERIOD_TO_FREQ((int32_t) mirror->reg->period);
+		MirrorSetFrequency(f + u);
 	}
 }
 
@@ -62,10 +71,15 @@ void MirrorEnClosedLoop(){
 	mirror->reg->control.enable = 1;
 	mirror->mode = CLOSED_LOOP;
 	// ToDo: Configure the linearization point here
+	mirror->f_lin = PERIOD_TO_FREQ((int32_t) mirror->reg->period);
+	mirror->dt_phi_lin = MirrorGetPhase();
 
 	// ToDo: Configure Kp and Ki
+	mirror->Kp = 0.01;
+	mirror->Ki = 0.001;
 
 	// ToDo: reset the integrating state of the controller
+	mirror->int_state = 0;
 }
 
 

@@ -38,6 +38,12 @@ typedef volatile struct
 	 * p-gain and i-gain
 	 * state for the controller
 	 */
+	 float f_lin;
+	 float dt_phi_lin;
+	 float Kp;
+	 float Ki;
+	 float int_state;
+	 
 } MEMSMirror;
 
 
