@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1778076983.82891 "c:/Users/heinr/OneDrive/Documents/TU/Mechatronische-Systeme-Labor/AFM/report/MechSys_LU_AFM.tex" "MechSys_LU_AFM.pdf" "MechSys_LU_AFM" 1778076990.14092 2
+["pdflatex"] 1778082366.51317 "c:/Users/heinr/OneDrive/Documents/TU/Mechatronische-Systeme-Labor/AFM/report/MechSys_LU_AFM.tex" "MechSys_LU_AFM.pdf" "MechSys_LU_AFM" 1778082390.86108 0
   "C:/Users/heinr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761831291 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/heinr/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760615176 24225088 acb62956041a2b1f3407cfcb1497e6b5 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -14,6 +14,7 @@
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm0700.tfm" 993062506 1452 97bdc98984cb373fbcd868e2fa55f5f2 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm0800.tfm" 993062506 1444 e35ead393df86aae37b5564284d9aa05 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
+  "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1440.tfm" 993062510 1460 05250f74aea2bdcfe9d6766811b8b7b2 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -252,10 +253,13 @@
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/tex/latex/units/nicefrac.sty" 1469029150 4163 0462ee5ab265cf59dc15a41a3b883101 ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/heinr/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "MechSys_LU_AFM.aux" 1778076989 719 06dec756e47f292b2dac3253218fba3e "pdflatex"
-  "MechSys_LU_AFM.tex" 1778076953 12462 5629704cd5183fb0f2abb1e35972af16 ""
-  "c:/Users/heinr/OneDrive/Documents/TU/Mechatronische-Systeme-Labor/AFM/report/MechSys_LU_AFM.tex" 1778076953 12462 5629704cd5183fb0f2abb1e35972af16 ""
+  "MechSys_LU_AFM.aux" 1778082390 5696 e967ef6d4ebc1f99c75faa8c2e6d6f3c "pdflatex"
+  "MechSys_LU_AFM.tex" 1778082340 13224 8605a58564f7661167b28ea2c2fa2d18 ""
+  "c:/Users/heinr/OneDrive/Documents/TU/Mechatronische-Systeme-Labor/AFM/report/MechSys_LU_AFM.tex" 1778082340 13224 8605a58564f7661167b28ea2c2fa2d18 ""
   "format.tex" 1777548379 2745 6851ae5a7ed2dad4c0543d1dce15077a ""
+  "images/11_higher_amp.png" 1778081221 25044 6a7694602905823d7e0f041360715000 ""
+  "images/11_in_phase.png" 1778081203 23504 4564b2e44889a7790d91629dd54ecebe ""
+  "images/11_off_phase.png" 1778081191 23890 bd6b3c58d7448178a318710297d034e3 ""
   "images/1_offset_compensation.png" 1777548379 13413710 3150d1fb31bd6039daefb953a6060353 ""
   "images/1_offset_compensation_schematics.png" 1777548379 30021 d8f40a39afcea861b6051ff5b95bd509 ""
   "images/2_lorentz_characterization.png" 1777548379 11853283 23aae7759f5fd6d07c1f29a993b62980 ""

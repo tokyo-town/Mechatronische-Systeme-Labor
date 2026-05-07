@@ -194,9 +194,8 @@ If we assume that the step heights of the unknown pattern lie at "nice" integer 
 \subsection*{10.}
 \subsection*{11.}
 
-Next, the sensor is supplied with an oscillating voltage at the same frequency $\omega$ as the actuator but with a phase offset $\phi$ relative to the actuating voltage in order to compensate 
-the phase offset of the mechanical system. For illustrative purposes, we assume that the phase offset of the mechanical system relative to the actuation is 0.
-The sample height limits the cantilever movement to some amplitude $A$.
+Next, the sensor is supplied with an oscillating voltage at the same frequency $\omega$ as the actuator but with a phase offset $\phi$ relative to the actuator in order to compensate 
+the phase offset of the mechanical system. The sample height limits the cantilever movement to some amplitude $A$.
 The readout voltage is given by:
 $$U_{out} = U_{sens} \cdot U_{act} \propto A \cdot \cos(\omega t + \phi) \cdot \cos(\omega t) \propto A \cdot ( \cos(\phi) + \cos(2\omega t + \phi) )$$
 This yields a signal with an AC component of double the actuation frequency and a DC component which depends on the phase offset.
@@ -204,9 +203,17 @@ This yields a signal with an AC component of double the actuation frequency and 
 By low-pass filtering out just the DC component, we get:
 $$U_{out} \propto A \cdot \cos(\phi)$$
 
-This means that ideally, the output voltage is a DC signal which is directly proportional to the sample height with a sensitivity given by the adjustable phase offset $\phi$, which should be $n\pi$
-for maximum readout.
+This means that ideally, the output voltage is a DC signal (see fig.~\ref{fig:DD_in_phase}) which is directly proportional to the sample height 
+(see fig.~\ref{fig:DD_amplitude}) with a sensitivity given by the adjustable phase offset $\phi$, which should be $2n\pi$ for maximum readout (see fig.~\ref{fig:DD_off_phase}).
+As shown in [10.], stickiness introduce a phase lag. Therefore, such surface properties are also visible in the output.
 
+\bild{h}{0.6}{images/11_in_phase}{Actuation and sensors are in phase. The output reads $\qty{5}{V}$}{fig:DD_in_phase}
+\bild{h}{0.6}{images/11_higher_amp}{Actuation and sensors are in phase. The output becomes proportionally higher with higher actuation amplitude.}{fig:DD_amplitude}
+\bild{h}{0.6}{images/11_off_phase}{Actuation and sensors are out of phase. The output gets diminished.}{fig:DD_off_phase}
+
+First, the DC offset of the sensor is eliminated by adjusting the potentiometer.
+Second, the phase offset of the sensor supply voltage is adjusted to output positive maximum ($\cos(\phi)=0$).
+A phase offset of $185^{\circ}$ yields the highest output.
 
 
 

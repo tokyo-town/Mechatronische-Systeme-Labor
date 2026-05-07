@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  6 MAY 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.16)  6 MAY 2026 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,6 +855,260 @@ File: images/setup_schematics.png Graphic file (type png)
 <use images/setup_schematics.png>
 Package pdftex.def Info: images/setup_schematics.png  used on input line 54.
 (pdftex.def)             Requested size: 210.87926pt x 127.5193pt.
-[5 <./images/setup.png>
-!pdfTeX error: pdflatex: fflush() failed (Invalid argument)
- ==> Fatal error occurred, no output PDF file produced!
+[5 <./images/setup.png> <./images/setup_schematics.png>] [6]
+chapter 3.
+<images/1_offset_compensation.png, id=59, 722.7pt x 542.025pt>
+File: images/1_offset_compensation.png Graphic file (type png)
+<use images/1_offset_compensation.png>
+Package pdftex.def Info: images/1_offset_compensation.png  used on input line 73.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/1_offset_compensation_schematics.png, id=60, 726.861pt x 170.163pt>
+File: images/1_offset_compensation_schematics.png Graphic file (type png)
+<use images/1_offset_compensation_schematics.png>
+Package pdftex.def Info: images/1_offset_compensation_schematics.png  used on input line 73.
+(pdftex.def)             Requested size: 210.87926pt x 49.36676pt.
+<images/2_lorentz_characterization.png, id=61, 722.7pt x 542.025pt>
+File: images/2_lorentz_characterization.png Graphic file (type png)
+<use images/2_lorentz_characterization.png>
+Package pdftex.def Info: images/2_lorentz_characterization.png  used on input line 80.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/2_lorentz_characterization_schematics.png, id=62, 726.861pt x 489.027pt>
+File: images/2_lorentz_characterization_schematics.png Graphic file (type png)
+<use images/2_lorentz_characterization_schematics.png>
+Package pdftex.def Info: images/2_lorentz_characterization_schematics.png  used on input line 80.
+(pdftex.def)             Requested size: 210.87926pt x 141.87389pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 83.
+(C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 83.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 83.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 83.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 83.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 83.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 83.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7
+
+
+ <./images/1_offset_compensation.png> <./images/1_offset_compensation_schematics.png>]
+<images/IMG_6045.jpg, id=69, 971.3088pt x 728.4816pt>
+File: images/IMG_6045.jpg Graphic file (type jpg)
+<use images/IMG_6045.jpg>
+Package pdftex.def Info: images/IMG_6045.jpg  used on input line 92.
+(pdftex.def)             Requested size: 210.87926pt x 158.15445pt.
+<images/2_lorentz_characterization_chart.png, id=70, 347.334pt x 226.446pt>
+File: images/2_lorentz_characterization_chart.png Graphic file (type png)
+<use images/2_lorentz_characterization_chart.png>
+Package pdftex.def Info: images/2_lorentz_characterization_chart.png  used on input line 92.
+(pdftex.def)             Requested size: 210.87926pt x 137.48225pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: images/2_lorentz_characterization.png Graphic file (type png)
+<use images/2_lorentz_characterization.png>
+Package pdftex.def Info: images/2_lorentz_characterization.png  used on input line 96.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/3_plant_sweep.png, id=71, 726.861pt x 494.064pt>
+File: images/3_plant_sweep.png Graphic file (type png)
+<use images/3_plant_sweep.png>
+Package pdftex.def Info: images/3_plant_sweep.png  used on input line 96.
+(pdftex.def)             Requested size: 210.87926pt x 143.33519pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/3_cantilever_resonance.png, id=72, 842.493pt x 542.463pt>
+File: images/3_cantilever_resonance.png Graphic file (type png)
+<use images/3_cantilever_resonance.png>
+Package pdftex.def Info: images/3_cantilever_resonance.png  used on input line 103.
+(pdftex.def)             Requested size: 224.33907pt x 144.4473pt.
+[8{C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./images/2_lorentz_characterization.png> <./images/2_lorentz_characterization_schematics.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/4_force_curve_setup.png, id=82, 722.7pt x 542.025pt>
+File: images/4_force_curve_setup.png Graphic file (type png)
+<use images/4_force_curve_setup.png>
+Package pdftex.def Info: images/4_force_curve_setup.png  used on input line 109.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/4_force_curve_schematics.png, id=83, 726.861pt x 494.064pt>
+File: images/4_force_curve_schematics.png Graphic file (type png)
+<use images/4_force_curve_schematics.png>
+Package pdftex.def Info: images/4_force_curve_schematics.png  used on input line 109.
+(pdftex.def)             Requested size: 210.87926pt x 143.33519pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./images/IMG_6045.jpg> <./images/2_lorentz_characterization_chart.png> <./images/3_plant_sweep.png>]
+<images/4_sticky.png, id=89, 750.951pt x 453.111pt>
+File: images/4_sticky.png Graphic file (type png)
+<use images/4_sticky.png>
+Package pdftex.def Info: images/4_sticky.png  used on input line 119.
+(pdftex.def)             Requested size: 210.87926pt x 127.23665pt.
+<images/4_non-sticky.png, id=90, 750.951pt x 453.111pt>
+File: images/4_non-sticky.png Graphic file (type png)
+<use images/4_non-sticky.png>
+Package pdftex.def Info: images/4_non-sticky.png  used on input line 119.
+(pdftex.def)             Requested size: 210.87926pt x 127.23665pt.
+
+Underfull \vbox (badness 1521) has occurred while \output is active []
+
+ [10 <./images/3_cantilever_resonance.png> <./images/4_force_curve_setup.png> <./images/4_force_curve_schematics.png>]
+<images/AFM_force_curve.png, id=97, 845.40843pt x 530.73282pt>
+File: images/AFM_force_curve.png Graphic file (type png)
+<use images/AFM_force_curve.png>
+Package pdftex.def Info: images/AFM_force_curve.png  used on input line 120.
+(pdftex.def)             Requested size: 224.33907pt x 140.82979pt.
+<images/6_controller.png, id=98, 722.7pt x 542.025pt>
+File: images/6_controller.png Graphic file (type png)
+<use images/6_controller.png>
+Package pdftex.def Info: images/6_controller.png  used on input line 130.
+(pdftex.def)             Requested size: 210.87926pt x 158.15915pt.
+<images/6_controller_schematics.png, id=99, 726.861pt x 444.789pt>
+File: images/6_controller_schematics.png Graphic file (type png)
+<use images/6_controller_schematics.png>
+Package pdftex.def Info: images/6_controller_schematics.png  used on input line 130.
+(pdftex.def)             Requested size: 210.87926pt x 129.0398pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./images/4_sticky.png> <./images/4_non-sticky.png> <./images/AFM_force_curve.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 157.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 157.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 157.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 157.
+ (C:\Users\heinr\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/7_known_steps.png, id=107, 389.382pt x 241.557pt>
+File: images/7_known_steps.png Graphic file (type png)
+<use images/7_known_steps.png>
+Package pdftex.def Info: images/7_known_steps.png  used on input line 159.
+(pdftex.def)             Requested size: 224.33907pt x 139.17062pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12 <./images/6_controller.png> <./images/6_controller_schematics.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/7_unknown_steps.png, id=113, 389.601pt x 241.557pt>
+File: images/7_unknown_steps.png Graphic file (type png)
+<use images/7_unknown_steps.png>
+Package pdftex.def Info: images/7_unknown_steps.png  used on input line 184.
+(pdftex.def)             Requested size: 224.33907pt x 139.09323pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/7_100um.png, id=114, 803.0pt x 504.88625pt>
+File: images/7_100um.png Graphic file (type png)
+<use images/7_100um.png>
+Package pdftex.def Info: images/7_100um.png  used on input line 186.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+<images/7_250um.png, id=115, 803.0pt x 504.88625pt>
+File: images/7_250um.png Graphic file (type png)
+<use images/7_250um.png>
+Package pdftex.def Info: images/7_250um.png  used on input line 186.
+(pdftex.def)             Requested size: 210.87926pt x 132.59239pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/7_xxxum.png, id=116, 803.0pt x 504.88625pt>
+File: images/7_xxxum.png Graphic file (type png)
+<use images/7_xxxum.png>
+Package pdftex.def Info: images/7_xxxum.png  used on input line 187.
+(pdftex.def)             Requested size: 448.67813pt x 282.11034pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13{C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./images/7_known_steps.png>] [14 <./images/7_unknown_steps.png>]
+<images/11_in_phase.png, id=127, 357.4956pt x 137.7948pt>
+File: images/11_in_phase.png Graphic file (type png)
+<use images/11_in_phase.png>
+Package pdftex.def Info: images/11_in_phase.png  used on input line 210.
+(pdftex.def)             Requested size: 269.20961pt x 103.77266pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 210.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/11_higher_amp.png, id=128, 357.4956pt x 137.7948pt>
+File: images/11_higher_amp.png Graphic file (type png)
+<use images/11_higher_amp.png>
+Package pdftex.def Info: images/11_higher_amp.png  used on input line 211.
+(pdftex.def)             Requested size: 269.20961pt x 103.77266pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/11_off_phase.png, id=129, 357.4956pt x 137.7948pt>
+File: images/11_off_phase.png Graphic file (type png)
+<use images/11_off_phase.png>
+Package pdftex.def Info: images/11_off_phase.png  used on input line 212.
+(pdftex.def)             Requested size: 269.20961pt x 103.77266pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 2762) has occurred while \output is active []
+
+ [15 <./images/7_100um.png (PNG copy)> <./images/7_250um.png (PNG copy)>] [16 <./images/7_xxxum.png (PNG copy)>] [17 <./images/11_in_phase.png (PNG copy)> <./images/11_higher_amp.png (PNG copy)> <./images/11_off_phase.png (PNG copy)>] (MechSys_LU_AFM.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 36586 strings out of 474485
+ 948030 string characters out of 5743733
+ 1938542 words of memory out of 5000000
+ 58273 multiletter control sequences out of 15000+600000
+ 639020 words of font info for 104 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,17n,107p,11294b,1018s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/heinr/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+Output written on MechSys_LU_AFM.pdf (17 pages, 59177473 bytes).
+PDF statistics:
+ 187 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+
