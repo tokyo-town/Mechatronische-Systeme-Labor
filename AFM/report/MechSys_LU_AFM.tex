@@ -254,6 +254,23 @@ The sticky surface dampens the output by $\approx 30 \%$ and introduces a phase 
 
 
 \subsection*{11.}
+
+Next, the sensor is supplied with an oscillating voltage at the same frequency $\omega$ as the actuator but with a phase offset $\phi$ relative to the actuating voltage in order to compensate 
+the phase offset of the mechanical system. For illustrative purposes, we assume that the phase offset of the mechanical system relative to the actuation is 0.
+The sample height limits the cantilever movement to some amplitude $A$.
+The readout voltage is given by:
+$$U_{out} = U_{sens} \cdot U_{act} \propto A \cdot \cos(\omega t + \phi) \cdot \cos(\omega t) \propto A \cdot ( \cos(\phi) + \cos(2\omega t + \phi) )$$
+This yields a signal with an AC component of double the actuation frequency and a DC component which depends on the phase offset.
+
+By low-pass filtering out just the DC component, we get:
+$$U_{out} \propto A \cdot \cos(\phi)$$
+
+This means that ideally, the output voltage is a DC signal which is directly proportional to the sample height with a sensitivity given by the adjustable phase offset $\phi$, which should be $n\pi$
+for maximum readout.
+
+
+
+
 \subsection*{12.}
 \subsection*{13.}
 \subsection*{14.}
