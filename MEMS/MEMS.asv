@@ -95,8 +95,6 @@ legend();
 
 
 
-
-
 % [y_id, ~] = lsim(FB,u,t);
 % figure();
 % plot(t, y_id)
@@ -115,10 +113,6 @@ legend();
 
 C_I = c2d(C_I, Ts)
 margin(C_I)
-
-pid_obj = pid(sys_id)
-kp = pid_obj.Kp
-ki = pid_obj.Ki
 
 data = iddata(step_use, u ,Ts);  
 
