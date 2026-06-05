@@ -1,4 +1,5 @@
-\documentclass[a4paper,twoside,12pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
+% \documentclass[a4paper,twoside,11pt,DIV=13,BCOR=5mm,numbers=noenddot,cleardoublepage=empty]{scrbook}
+\documentclass[a4paper,twoside,11pt,DIV=13,BCOR=5mm,numbers=noenddot]{scrbook}
 
 \input{format}  			% File mit den benötigten Packeten, den Formatanweisungen und den Befehlsdefinitionen
 
@@ -22,6 +23,7 @@
 \usepackage{multirow}
 \usepackage{subcaption}
 
+\RedeclareSectionCommand[style=section]{chapter}% <- added
 \DeclareSIUnit{\rad}{rad}
 
 \begin{document}
@@ -35,8 +37,8 @@
             \put(10.5,16.85){\makebox(0,0){\Huge\bfseries Lab Report}}
             \put(10.5,14.85){\makebox(0,0){\Huge\bfseries Principles of Atomic Force Microscopy}}
             \put(10.5, 13.5){\makebox(0,0){\large 369.002 Mechatronic Systems Laboratory, SS 2026}} % subtitle below line
-            \put(7.3,9.3){Severin Großauer} \put(14.1,9.3){}
-            \put(7.3,8.5){Markus Rennthaler} \put(14.1,8.5){}
+            \put(7.3,9.3){Severin Großauer} \put(14.1,9.3){12112936}
+            \put(7.3,8.5){Markus Rennthaler} \put(14.1,8.5){12102442}
             \put(7.3,7.7){Heinrich Fuhrmann} \put(14.1,7.7){11940304}
 						\put(7.3,6.7){\today} 
 }]
@@ -51,7 +53,7 @@ Finally, an integral controller is used to control the tip-sample distance to re
 
 \chapter{Setup}
 
-\bilder{htb}{1}{images/setup}{}{1}{images/setup_schematics}{}{Setup of AFM experiments and schematics}{fig:afm_setup}
+\bilder{H}{1}{images/setup}{}{1}{images/setup_schematics}{}{Setup of AFM experiments and schematics}{fig:afm_setup}
 
 In fig.~\ref{fig:afm_setup}, the setup of the AFM experiments is shown. Depending on the experiment, different parts of the setup are used.
 The sample is placed on a stage that can be manually moved vertically to align with the AFM tip and horizontally to scan the sample surface.
@@ -68,16 +70,17 @@ In the subsequent experiments, only the parts of the setup that are labeled in t
 \section{Calibration and Characterization of Sensor and Actuator}
 
 
-\subsection*{1.}
+\paragraph*{1.}
 
-\bilder{h}{1}{images/1_offset_compensation}{}{1}{images/1_offset_compensation_schematics}{}{Offset compensation setup and schematics}{fig:afm_setup}
+\bilder{H}{1}{images/1_offset_compensation}{}{1}{images/1_offset_compensation_schematics}{}{Offset compensation setup and schematics}{fig:afm_setup}
 
 Only the power supply and sensor readout is connected (see fig.~\ref{fig:afm_setup}). By turning the small potentiometer on the readout electronics board, the offset is adjusted until the sensor output reads zero
 when the cantilever is in its rest position.
 
-\subsection*{2.}
 
-\bilder{h}{1}{images/2_lorentz_characterization}{}{1}{images/2_lorentz_characterization_schematics}{}{Lorentz actuator characterization setup and schematics}{fig:lorentz_setup}
+\paragraph*{2.}
+
+\bilder{H}{1}{images/2_lorentz_characterization}{}{1}{images/2_lorentz_characterization_schematics}{}{Lorentz actuator characterization setup and schematics}{fig:lorentz_setup}
 
 To characterize the Lorentz actuator we use the sample stage as a measurement reference and set it to an arbitrary height below the minimum AFM tip height (see fig.~\ref{fig:lorentz_setup} for schematics).
 We apply a voltage in $\qty{100}{\mV}$ steps to the actuator and measure the distance from the cantilever to the sample with a caliper (see fig.~\ref{fig:lorentz_characterization}a).
@@ -89,22 +92,23 @@ F_\mathrm{L} &= N I B l &\propto I \qquad \text{Lorentz Force}\\
 F_\mathrm{L} &= k \Delta z &\propto \Delta z \qquad \text{Hooke's Law}\\
 \end{aligned}$$
 
-\bilder{h}{1}{images/IMG_6045}{}{1}{images/2_lorentz_characterization_chart}{}{Lorentz actuator characterization measurement}{fig:lorentz_characterization}
+\bilder{H}{1}{images/IMG_6045}{}{1}{images/2_lorentz_characterization_chart}{}{Lorentz actuator characterization measurement}{fig:lorentz_characterization}
 
-\subsection*{3.}
+\paragraph*{3.}
 
-\bilder{h}{1}{images/2_lorentz_characterization}{}{1}{images/3_plant_sweep}{}{Plant characterization setup and schematics}{fig:plant_sweep}
+\bilder{H}{1}{images/2_lorentz_characterization}{}{1}{images/3_plant_sweep}{}{Plant characterization setup and schematics}{fig:plant_sweep}
 
 Next, a sine sweep from $\qty{10}{\Hz}$ to $\qty{100}{\Hz}$ is applied to the Lorentz actuator and the frequency response of the free cantilever is measured with an oscilloscope (see fig.~\ref{fig:plant_sweep}).
 The resulting Bode plot is shown in fig.~\ref{fig:plant_sweep_bode}.
 We start at $-180^{\circ}$ phase lag due to the inertia of the cantilever. The plot shows two dominant resonances at $\qty{18.9}{\Hz}$ and $\qty{22.1}{\Hz}$, adding $-360^{\circ}$ of phase lag in total, as well as some structural modes at higher frequencies.
 
 
-\bild{h}{0.5}{images/3_cantilever_resonance}{Bode plot of AFM cantilever}{fig:plant_sweep_bode}
+\bild{H}{0.5}{images/3_cantilever_resonance}{Bode plot of AFM cantilever}{fig:plant_sweep_bode}
 
+\FloatBarrier
 \section{Force Curve}
 
-\subsection*{4.}
+\paragraph*{4.}
 
 \bilder{h}{1}{images/4_force_curve_setup}{}{1}{images/4_force_curve_schematics}{}{Force curve measurement setup and schematics}{fig:force_curve_setup}
 
@@ -123,11 +127,13 @@ However, this effect becomes much too small to be observed with the non-sticky s
 In contact mode imaging, constant connection between the cantilever tip and the sample is necessary.
 An integrator controller is used to keep the cantilever deflection constant and the height of an unknown sample topography is determined.
 
-\subsection*{5.}
+\FloatBarrier
+\section{Contact Mode Operation}
+\paragraph*{5.}
 
-This section requires no measurements.
+The Lorentz actuator is disconnected.
 
-\subsection*{6.}
+\paragraph*{6.}
 
 \bilder{h}{1}{images/6_controller}{}{1}{images/6_controller_schematics}{}{Controller implementation setup and schematics}{fig:controller}
 
@@ -137,7 +143,7 @@ therefore we must expect a realistic bandwidth of about 1 order of magnitude low
 
 The setpoint is set to a constant value in order to set the controller output to zero when the cantilever is touching the sample surface at the neutral position.
 
-\subsection*{7.}
+\paragraph*{7.}
 
 Using the same setup as before, the sample is moved horizontally along the three height patterns. First, two regular patterns with a predefined step height are measured by
 shifting the sample and waiting about $\qtyrange{1}{2}{\s}$ for the system to settle at each step (slow scan).
@@ -160,8 +166,10 @@ The results are shown in tab.~\ref{tab:step_heights_slow} and visualized in fig.
 
 \bilder{h}{1}{images/7_known_steps}{slow scan}{1}{images/8_known_steps}{fast scan}{Measured step heights of the known patterns}{fig:step_heights_regular}
 
-As we can see, the step heights correspond roughly linearly to the readout voltages. However, the relation is distorted for small changes in step height due to the nonlinearity of the
-deformation of the tip-cantilever system. However, we can attempt to find a reasonable average by weighing the steps with the step size which results in a sensitivity of ($\qty{24.74}{\milli\V\per100\micro\m}$).
+As we can see, the step heights correspond roughly linearly to the readout voltages. However, the relation is distorted for the 100 µm pattern. It looks like the measurements are scaled by a factor of about 2.
+This discrepancy persists over different imaging modes, as seen in the later sections.
+We can attempt to find a reasonable average by weighing the steps with the step size of the respective pattern. This approach is subsequently applied to all imaging modes.
+This results in a sensitivity of ($\qty{24.74}{\milli\V\per100\micro\m}$).
 
 Applying this sensitivity to the readouts from the unknown pattern, we can estimate its step heights as shown in tab.~\ref{tab:step_heights_slow} and fig.~\ref{fig:step_heights_unknown}a.
 The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_osci} for reference.
@@ -172,7 +180,7 @@ The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_o
 \bilder{h}{1}{images/7_100um}{100 µm}{1}{images/7_250um}{250 µm}{Oscilloscope readouts for known step patterns}{fig:step_heights_regular_osci}
 \bild{h}{0.6}{images/7_xxxum}{Oscilloscope readouts for unknown step patterns}{fig:step_heights_unknown_osci}
 
-\subsection*{8.}
+\paragraph*{8.}
 
 Next, the scan is done without waiting for the system to settle at each step (fast scan). The scan time now is only about $\qty{0.5}{\s}$ for each step.
 The results are shown in tab.~\ref{tab:step_heights_fast} and visualized in fig.~\ref{fig:step_heights_regular}b.
@@ -197,7 +205,7 @@ $\qty{25.14}{\milli\V\per100\micro\m}$. Applying this sensitivity to the readout
 The direct oscilloscope readout is shown in fig.~\ref{fig:step_heights_unknown_osci_fast} for reference.
 
 We can now compare both height estimations (fig.~\ref{fig:step_heights_comparison}). As expected, the fast scan shows slightly higher values overall.
-If we assume that the step heights of the unknown pattern lie at round integer values, we can see that we have an error of about $\pm\qty{20}{\micro\m}$ for each measuring point.
+For visual reference, the step heights of the unknown pattern are chosen to lie at round integer values, where we would have an error of about $\pm\qty{20}{\micro\m}$ for each measuring point.
 
 
 
@@ -208,7 +216,7 @@ If we assume that the step heights of the unknown pattern lie at round integer v
 \bild{h}{1}{images/8_xxxum}{Oscilloscope readouts for unknown step patterns (scanned faster)}{fig:step_heights_unknown_osci_fast}
 
 
-\subsection*{9.}
+\paragraph*{9.}
 
 \bilder{h}{1}{images/6_controller}{}{1}{images/9_closed_loop_schematics}{}{Closed-loop system identification setup and schematics}{fig:closed_loop_bode_setup}
 
@@ -230,7 +238,9 @@ See fig.~\ref{fig:closed_loop_bode_comparison} for a direct comparison of the op
 In tapping mode imaging, the cantilever is actuated in vertical oscillation, so the tip only touches the sample at the lowest point of the oscillation.
 With direct demodulation and an integral controller the unknown sample profile is measured.
 
-\subsection*{10.}
+\FloatBarrier
+\section{Tapping Mode Operation}
+\paragraph*{10.}
 
 \bilder{h}{1}{images/10_setup}{}{1}{images/10_schematics}{}{Open loop tapping mode setup and schematics}{fig:tapping_setup}
 
@@ -240,9 +250,9 @@ The actuation frequency is chosen to be the resonance at $\qty{20.4}{\Hz}$.
 The differences between the readouts of the sticky and non-sticky surface are shown in fig.~\ref{fig:tapping_surfaces} and tab.~\ref{tab:tapping_surfaces}.
 Due to the noisiness of the sensor readout, exact measurements are not possible, however, the qualitative differences are visually apparent:
 
-The sticky surface dampens the output by $\approx 30 \%$ and introduces a phase lag of $\approx 30^{\circ}$.
+The sticky surface dampens the output signal  by $\approx 30 \%$ and introduces a phase lag of $\approx 30^{\circ}$.
 
-\tabelle{h}{Properties of output signal in tapping mode}{tab:step_heights_fast}{l r r}{
+\tabelle{h}{Properties of output signal in tapping mode}{tab:tapping_surfaces}{l r r}{
   \toprule
   Surface & Output $V_{pp}$ & Phase offset \\
   sticky & 40 & $-27.9^{\circ}$ \\
@@ -253,9 +263,13 @@ The sticky surface dampens the output by $\approx 30 \%$ and introduces a phase 
 \bilder{h}{1}{images/10_non-sticky}{Non-sticky}{1}{images/10_sticky}{Sticky}{Sensor readout for different surface properties. Yellow curve: actuation signal, green curve: sensor readout signal}{fig:tapping_surfaces}
 
 
-\subsection*{11.}
+\paragraph*{11.}
 
-Next, the sensor is supplied with an oscillating voltage at the same frequency $\omega$ as the actuator but with a phase offset $\phi$ relative to the actuator in order to compensate 
+\bilder{h}{1}{images/11_setup}{}{1}{images/11_schematics}{}{Setup and schematics for direct demodulation tuning}{fig:tapping_setup_DD}
+
+The setup and schematics for direct demodulation tuning are shown in fig.~\ref{fig:tapping_setup_DD}.
+
+The sensor is now supplied with an oscillating voltage at the same frequency $\omega$ as the actuator but with a phase offset $\phi$ relative to the actuator in order to compensate 
 the phase offset of the mechanical system. The sample height limits the cantilever movement to some amplitude $A$.
 The readout voltage is given by:
 $$U_{out} = U_{sens} \cdot U_{act} \propto A \cdot \cos(\omega t + \phi) \cdot \cos(\omega t) \propto A \cdot ( \cos(\phi) + \cos(2\omega t + \phi) )$$
@@ -265,34 +279,76 @@ By low-pass filtering out just the DC component, we get:
 $$U_{out} \propto A \cdot \cos(\phi)$$
 
 This means that ideally, the output voltage is a DC signal (see fig.~\ref{fig:DD_in_phase}) which is directly proportional to the sample height 
-(see fig.~\ref{fig:DD_amplitude}) with a sensitivity given by the adjustable phase offset $\phi$, which should be $2n\pi$ for maximum readout (see fig.~\ref{fig:DD_off_phase}).
-As shown in [10.], stickiness introduce a phase lag. Therefore, such surface properties are also visible in the output.
+(see fig.~\ref{fig:DD_amplitude}) with a sensitivity given by the adjustable phase offset $\phi$, which should be $2n\pi$ for maximum readout. See figs. \ref{fig:DD_off_phase}, \ref{fig:DD_in_phase} and \ref{fig:DD_amplitude}
+for a comparison how amplitude and phase influence the output signal.
+As shown in [10.], stickiness introduce a phase lag. Because of the relation shown above, this will be directly visible in the output.
+\footnote{We can imagine how other surface properties could also influence the phase and amplitude of the readout signal in a real AFM.}
 
 \bild{h}{0.6}{images/11_in_phase}{Actuation and sensors are in phase. The output reads $\qty{5}{V}$}{fig:DD_in_phase}
 \bild{h}{0.6}{images/11_higher_amp}{Actuation and sensors are in phase. The output becomes proportionally higher with higher actuation amplitude.}{fig:DD_amplitude}
 \bild{h}{0.6}{images/11_off_phase}{Actuation and sensors are out of phase. The output gets diminished.}{fig:DD_off_phase}
 
 First, the DC offset of the sensor is eliminated by adjusting the potentiometer.
-Second, the phase offset of the sensor supply voltage is adjusted to output positive maximum ($\cos(\phi)=0$).
-A phase offset of $185^{\circ}$ yields the highest output.
+Second, the lowpass filter (see fig.~\ref{fig:lowpass_filter} and tab.~\ref{tab:lowpass_filter}) is added and the phase offset of the sensor supply voltage is adjusted to output positive maximum ($\cos(\phi)=0$).
+A phase offset of $185^{\circ}$ yields the highest output. We verify that the output scales linearly with the actuation amplitude with an estimated correspondence of:
+$$\frac{\Delta U_{out}}{\Delta U_{in}} \approx \frac{\qty{6}{\mV}}{\qty{10}{\mV}\text{PP}}$$
 
 
+\tabelle{h}{Settings of the lowpass filter}{tab:lowpass_filter}{l r}{
+  \toprule
+  Cutoff frequency & $\qty{14}{\Hz}$ \\
+  Gain & $\qty{0}{\dB}$ \\
+  \bottomrule
+}
+\bild{h}{0.6}{images/IMG_6145}{Wavetek Brickwall Filter Model 753A. The lowpass filter channel on the right is used.}{fig:lowpass_filter}
 
-\subsection*{12.}
-\subsection*{13.}
-\subsection*{14.}
+\paragraph*{12.}
+
+\bilder{h}{1}{images/12_setup}{}{1}{images/12_schematics}{}{Closed loop tapping mode setup and schematics}{fig:tapping_setup_closed}
+
+Finally, the controller is engaged to fully experiment with the tapping mode operation. Setup and schematics are shown in fig.~\ref{fig:tapping_setup_closed}. The controller parameters are the same as in the contact mode, but the setpoint is adjusted to a value that allows for a good readout of the step heights.
+The round tip is used for the subsequent measurements.
+
+\paragraph*{13.}
+
+As in the contact mode, the three step patterns are scanned. The results are shown in tab.~\ref{tab:step_heights_tapping} and visualized in fig.~\ref{fig:step_heights_unknown_tapping}.
+Between the measurements, a settling time of about $\qty{1}{\s}$ is given as in the slow scan of the contact mode.
+A direct comparison between the measurement modes is shown in fig.~\ref{fig:step_heights_comparison:tapping}.
 
 
+In tapping mode some of the mechanical nonlinearities are reduced because the cantilever is in constant motion and is less likely to get stuck in certain positions.
+Similarly, loose connections between parts or friction are also less of a problem. Therefore, tapping mode should get a better linear relationship between readout voltage and step height, which we can verify by
+calculating the standard deviation for the steps, for example (see tab.~\ref{tab:step_heights_deviation}).
+
+\tabelle{h}{Standard deviation of steps}{tab:step_heights_deviation}{l l l}{
+  \toprule
+  Pattern & $\sigma$ (contact mode) & $\sigma$ (tapping mode) \\
+  \midrule
+  $\qty{100}{\um}$ & $\qty{6.3}{\mV}$ & $\qty{3.1}{\mV}$ \\
+  $\qty{250}{\um}$ & $\qty{4.9}{\mV}$ & $\qty{3.0}{\mV}$ \\
+  \bottomrule
+}
+
+For the readout voltages themselves, we get higher values in tapping mode because of the larger motion where the deflection propagates better to the base of the cantilever where the sensors are.
+
+\tabelle{h}{Measured step heights of the known patterns and calculated heights for unknown pattern (tapping mode). Voltages are normalized to start at 0.}{tab:step_heights_tapping}{l @{\hspace{1cm}} rr @{\hspace{1.5cm}} rr @{\hspace{1.5cm}} rr}{
+  \toprule
+  Pattern & \multicolumn{2}{l}{100 µm} & \multicolumn{2}{l}{250 µm} & \multicolumn{2}{l}{??? µm} \\
+  \midrule
+  Step & mV & µm & mV & µm & mV & µm \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  1 & 20 & 100 & 90 & 250 & 135 & 503 \\
+  2 & 30 & 200 & 160 & 500 & 0 & 0 \\
+  3 & 40 & 300 & 240 & 750 & 15 & 56 \\
+  4 & 60 & 400 & 320 & 1000 & 180 & 670 \\
+  5 & 80 & 500 & 390 & 1250 & 10 & 37 \\
+  \bottomrule
+}
+
+\bild{h}{0.6}{images/13_unknown_steps}{Measured step heights of known and unknown patterns}{fig:step_heights_unknown_tapping}
+\bild{h}{0.6}{images/13_profile_height}{Comparison of estimated step heights for tapping and contact mode.}{fig:step_heights_comparison:tapping}
 
 
-
-
-
-% \tabelle{htb}{Parameters of PID-controller (preliminary)}{tab:parameters_preliminary}{l l}{
-%   \toprule
-%   \midrule
-%   \bottomrule
-% }
 
 
 
