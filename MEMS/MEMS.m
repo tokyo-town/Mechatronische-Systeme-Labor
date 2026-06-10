@@ -30,110 +30,136 @@ t = (0:N-1)' * Ts;      % Zeitvektor
 
 u = ones(size(t));
 
-data = iddata(step_use, u ,Ts);  
-
-% Systemidentifikation
-sys_id = tfest(data,2,1,'Ts',0);       
-[y_id, ~] = lsim(sys_id,u,t);
 
 
-bode(sys_id)
-grid
-legend("Sys ID")
-figure();
+% step response open loop
+data = iddata(step_i, u, Us);
 
-hold on
-plot(t, y_id)
-plot(t, step_use)
+% system from step response
+sys_id = tfest(data, 2, 1, 'Ts', 0);
+bode(sys_id), grid, legend
+P = tf(sys_id)
 
-grid();
-legend();
-
-P = tf(sys_id);
+% I controller
 fc = 60;
+C = design_I_ctl(P, fc)
+Cz = c2d(C, Ts, 'zoh')
 
-[Ki, C_I] = design_I_ctl(P, fc)
-
-margin(P * C_I)
-
-
-C_I = c2d(C_I, Ts)
-
-figure();
-bode(C_I), grid, legend
+figure;
+margin(C)
 
 
-data = iddata(i_reg', u , Ts);  
-
-% Systemidentifikation
-sys_id = tfest(data,2,1,'Ts',0);       
-[y_id, ~] = lsim(sys_id,u,t);
-
-figure();
-grid
-legend("Sys ID")
-figure();
-
-plot(t, i_reg')
-plot(t, y_id)
-
-grid();
-legend();
-
- 
+% open loop
+OL = c2d(P*C, Ts)
+bode(OL)
 
 
+% old
 
-
-
-
-
+% data = iddata(step_use, u ,Ts);  
+% 
+% % Systemidentifikation
+% sys_id = tfest(data,2,1,'Ts',0);       
+% [y_id, ~] = lsim(sys_id,u,t);
+% 
+% 
+% bode(sys_id)
+% grid
+% legend("Sys ID")
+% figure();
+% 
+% hold on
+% plot(t, y_id)
+% plot(t, step_use)
+% 
+% grid();
+% legend();
+% 
+% P = tf(sys_id);
+% fc = 60;
+% 
+% [Ki, C_I] = design_I_ctl(P, fc)
+% 
+% margin(P * C_I)
+% 
+% 
+% C_I = c2d(C_I, Ts)
 % 
 % figure();
-% FB = feedback(P * tf(3e-5, [1, 0]), 1);
-% bode(FB), grid, legend
-
-
-
-
-
-% [y_id, ~] = lsim(FB,u,t);
+% bode(C_I), grid, legend
+% 
+% 
+% data = iddata(i_reg', u , Ts);  
+% 
+% % Systemidentifikation
+% sys_id = tfest(data,2,1,'Ts',0);       
+% [y_id, ~] = lsim(sys_id,u,t);
+% 
 % figure();
+% grid
+% legend("Sys ID")
+% figure();
+% 
+% plot(t, i_reg')
 % plot(t, y_id)
-
-
-
-fc = 200;
-pm = 70;
-
-[Kp, Ki, C_PI] = design_PI_ctl(P, fc, pm)
-figure();
-margin(P * C_PI)
-grid();
-legend();
-
-
-C_I = c2d(C_I, Ts)
-margin(C_I)
-
-pid_obj = pid(sys_id)
-kp = pid_obj.Kp
-ki = pid_obj.Ki
-
-data = iddata(step_use, u ,Ts);  
-
-% Systemidentifikation
-sys_id = tfest(data,2,1,'Ts',0);       
-[y_id, ~] = lsim(sys_id,u,t);
-
-bode(sys_id)
-grid
-legend
-figure();
-
-hold on
-plot(t, y_id)
-plot(t, step_use)
+% 
+% grid();
+% legend();
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% % 
+% % figure();
+% % FB = feedback(P * tf(3e-5, [1, 0]), 1);
+% % bode(FB), grid, legend
+% 
+% 
+% 
+% 
+% 
+% % [y_id, ~] = lsim(FB,u,t);
+% % figure();
+% % plot(t, y_id)
+% 
+% 
+% 
+% fc = 200;
+% pm = 70;
+% 
+% [Kp, Ki, C_PI] = design_PI_ctl(P, fc, pm)
+% figure();
+% margin(P * C_PI)
+% grid();
+% legend();
+% 
+% 
+% C_I = c2d(C_I, Ts)
+% margin(C_I)
+% 
+% pid_obj = pid(sys_id)
+% kp = pid_obj.Kp
+% ki = pid_obj.Ki
+% 
+% data = iddata(step_use, u ,Ts);  
+% 
+% % Systemidentifikation
+% sys_id = tfest(data,2,1,'Ts',0);       
+% [y_id, ~] = lsim(sys_id,u,t);
+% 
+% bode(sys_id)
+% grid
+% legend
+% figure();
+% 
+% hold on
+% plot(t, y_id)
+% plot(t, step_use)
 
 function [Ki, C_I] = design_I_ctl(P, fc)
     [mag, ~, w] = bode(P);
